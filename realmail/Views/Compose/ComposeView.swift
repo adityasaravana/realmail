@@ -12,7 +12,7 @@ struct ComposeView: View {
     @State private var ccRecipients: String = ""
     @State private var bccRecipients: String = ""
     @State private var subject: String = ""
-    @State private var body: String = ""
+    @State private var messageBody: String = ""
     @State private var showCcBcc = false
     @State private var attachments: [URL] = []
     @State private var isSending = false
@@ -90,7 +90,7 @@ struct ComposeView: View {
             Divider()
 
             // Body editor
-            TextEditor(text: $body)
+            TextEditor(text: $messageBody)
                 .font(.body)
                 .scrollContentBackground(.hidden)
                 .padding()

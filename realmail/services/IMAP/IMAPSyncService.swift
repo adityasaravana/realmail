@@ -194,7 +194,7 @@ final class IMAPSyncService {
                 modelContext.insert(folder)
                 account.folders.append(folder)
 
-                logger.debug("Created folder: \(folder.name) (\(folder.folderType))")
+                logger.debug("Created folder: \(folder.name) (\(folder.folderType.rawValue))")
             }
         }
 

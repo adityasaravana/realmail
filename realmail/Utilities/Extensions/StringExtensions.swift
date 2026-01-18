@@ -109,11 +109,12 @@ extension String {
 
             if encoding == "B" {
                 // Base64 encoding
-                if let data = Data(base64Encoded: encodedData),
-                   let cfEncoding = CFStringConvertIANACharSetNameToEncoding(charset as CFString),
-                   cfEncoding != kCFStringEncodingInvalidId {
-                    let nsEncoding = CFStringConvertEncodingToNSStringEncoding(cfEncoding)
-                    decoded = String(data: data, encoding: String.Encoding(rawValue: nsEncoding))
+                if let data = Data(base64Encoded: encodedData) {
+                    let cfEncoding = CFStringConvertIANACharSetNameToEncoding(charset as CFString)
+                    if cfEncoding != kCFStringEncodingInvalidId {
+                        let nsEncoding = CFStringConvertEncodingToNSStringEncoding(cfEncoding)
+                        decoded = String(data: data, encoding: String.Encoding(rawValue: nsEncoding))
+                    }
                 }
             } else if encoding == "Q" {
                 // Quoted-printable encoding

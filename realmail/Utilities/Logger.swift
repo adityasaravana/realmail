@@ -49,6 +49,31 @@ enum Log {
     )
 }
 
+// MARK: - Logger Static Accessors
+
+extension Logger {
+    /// Logger for general application events.
+    static let app = Log.app
+
+    /// Logger for authentication and account operations.
+    static let auth = Log.auth
+
+    /// Logger for IMAP synchronization operations.
+    static let imap = Log.imap
+
+    /// Logger for SMTP sending operations.
+    static let smtp = Log.smtp
+
+    /// Logger for SwiftData and persistence operations.
+    static let data = Log.data
+
+    /// Logger for network operations.
+    static let network = Log.network
+
+    /// Logger for UI and view-related events.
+    static let ui = Log.ui
+}
+
 // MARK: - Logger Extensions
 
 extension Logger {

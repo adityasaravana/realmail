@@ -34,7 +34,7 @@ struct ContentView: View {
         } detail: {
             if let message = selectedMessage {
                 MessageDetailView(message: message)
-                    .navigationSplitViewColumnWidth(min: AppConstants.UI.detailMinWidth)
+                    .navigationSplitViewColumnWidth(min: AppConstants.UI.detailMinWidth, ideal: AppConstants.UI.detailMinWidth)
             } else {
                 ContentUnavailableView(
                     "No Message Selected",
